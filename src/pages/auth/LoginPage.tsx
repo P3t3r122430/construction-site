@@ -107,6 +107,17 @@ export const LoginPage: React.FC = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-slate-900 border border-slate-800 py-8 px-6 shadow-2xl rounded-3xl sm:px-10 space-y-6">
+          {!isConfigured && (
+            <div className="bg-amber-950/40 border border-amber-800/60 p-4 rounded-2xl space-y-1.5">
+              <div className="flex items-center gap-2 text-amber-400 font-bold text-xs">
+                <AlertCircle className="w-4 h-4 shrink-0" />
+                <span>Supabase Credentials Required</span>
+              </div>
+              <p className="text-[11px] text-amber-200/80 leading-relaxed">
+                Live authentication is enforced. To log in or register, set <code className="font-mono bg-black/40 px-1 py-0.5 rounded text-amber-300">VITE_SUPABASE_URL</code> and <code className="font-mono bg-black/40 px-1 py-0.5 rounded text-amber-300">VITE_SUPABASE_ANON_KEY</code> in the project Settings.
+              </p>
+            </div>
+          )}
           
           {/* Portal Selection Tabs (Informational Navigation Only - Requires Full Password Auth) */}
           <div>

@@ -147,7 +147,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setLoading(false);
         return { 
           success: false, 
-          error: 'Supabase authentication service is not connected. Please verify environment variables.' 
+          error: 'Supabase credentials not configured. Please add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in Settings to enable authentication.' 
         };
       }
 
